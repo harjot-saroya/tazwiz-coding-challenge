@@ -1,0 +1,67 @@
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.outer {
+  background-color: antiquewhite;
+}
+.header {
+  background-color: aqua;
+  text-align: center;
+}
+.customers {
+  padding: 2%;
+}
+.customers h1 {
+  text-decoration: underline;
+}
+.logout {
+  float: left;
+}
+.products h1 {
+  text-decoration: underline;
+}
+.footer {
+  padding: 6%;
+  background-color: antiquewhite;
+}
+.products {
+  padding: 2%;
+}
+.modifyItems {
+  padding: 2%;
+}
+.modifyItems h1 {
+  text-decoration: underline;
+}
+#form {
+  padding: 3%;
+}
+
+#citem {
+  padding: 2rem;
+  border-style: outset;
+  background-color: wheat;
+}
+#pitem {
+  padding: 2rem;
+  border-style: outset;
+  background-color: wheat;
+}
+#pitem li {
+  list-style-type: none;
+}
+#citem li {
+  list-style-type: none;
+}
+.dbitems {
+  display: flex;
+  flex-direction: column;
+  border-style: inset;
+  background-color: wheat;
+  padding: 3rem;
+}
+#small {
+  padding: 5%;
+}
