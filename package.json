@@ -39,11 +39,10 @@
     "validator": "^13.0.0"
   },
   "scripts": {
-       "start:dev": "export NODE_ENV=Development && webpack-dev-server --open --config webpack.dev.js",
-    "start": "export NODE_ENV=Production && node src/server.js",
-    "build": "webpack --config webpack.prod.js"
-    
-
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
 
 
   },
