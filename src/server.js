@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-
+const proxy = require("http-proxy-middleware");
 const mongoose = require("mongoose");
 var cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
@@ -11,6 +11,7 @@ let URI = process.env.MONGODB_URI || "mongodb://localhost:27017/test";
 mongoose.connect(URI, {
   useNewUrlParser: true
 });
+
 const conn = mongoose.connection;
 const MongoStore = require("connect-mongo")(session);
 app.use(cookieParser("work hard"));
@@ -33,7 +34,10 @@ app.use(
     })
   })
 );
-
+module.exports = function(app) {
+  // add other server routes to path array
+  app.use(proxy(["/api"], { target: process.env.PORT }));
+};
 app.use(
   bodyParser.urlencoded({
     extended: true
@@ -289,7 +293,7 @@ app.post("/createCust", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 
 app.listen(port, () => console.log("Server up and running on port " + port));
 
