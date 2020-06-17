@@ -7,7 +7,8 @@ const bodyParser = require("body-parser");
 const app = express();
 var ObjectId = require("mongodb").ObjectID;
 var cors = require("cors");
-mongoose.connect("mongodb://localhost:27017/test", {
+let URI = process.env.MONGODB_URI || "mongodb://localhost:27017/test";
+mongoose.connect(URI, {
   useNewUrlParser: true
 });
 const conn = mongoose.connection;
@@ -26,7 +27,7 @@ app.use(
       maxAge: 3600000
     },
     store: new MongoStore({
-      url: "mongodb://127.0.0.1:27017/test",
+      url: URI,
       collection: "sessions"
       //mongooseConnection: mongoose.connection
     })
