@@ -43,7 +43,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prestart": "node ./src/server.js",
+    "prestart": "node src/server.js",
     
 
 
