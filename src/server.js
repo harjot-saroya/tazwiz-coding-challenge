@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 var ObjectId = require("mongodb").ObjectID;
 var cors = require("cors");
-let URI = process.env.MONGODB_URI;
+let URI = process.env.MONGODB_URI; //|| "mongodb://localhost:27017/test";
 mongoose.connect(URI, {
   useNewUrlParser: true
 });
@@ -55,11 +55,11 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-app.get("/", async (req, res) => {
-  if (!req.session.user) {
-    res.redirect("/logout");
-  }
-});
+// app.get("/", async (req, res) => {
+//   if (!req.session.user) {
+//     res.redirect("/logout");
+//   }
+// });
 
 app.post("/login", async (req, res) => {
   const user = req.body.username;
