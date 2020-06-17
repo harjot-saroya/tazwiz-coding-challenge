@@ -7,7 +7,9 @@ const bodyParser = require("body-parser");
 const app = express();
 var ObjectId = require("mongodb").ObjectID;
 var cors = require("cors");
-let URI = process.env.MONGODB_URI || "mongodb://localhost:27017/test";
+let URI =
+  "mongodb://heroku_jt3q7spb:t71vccfofjmn8iqfjqj1iej8ot@ds125031.mlab.com:25031/heroku_jt3q7spb" ||
+  "mongodb://localhost:27017/test";
 mongoose.connect(URI, {
   useNewUrlParser: true
 });
