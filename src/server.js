@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 var ObjectId = require("mongodb").ObjectID;
 var cors = require("cors");
-let URI = process.env.MONGODB_URI; //|| "mongodb://localhost:27017/test";
+let URI = process.env.MONGODB_URI || "mongodb://localhost:27017/test";
 mongoose.connect(URI, {
   useNewUrlParser: true
 });
