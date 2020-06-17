@@ -51,7 +51,7 @@ app.use(
 );
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/test", { useNewUrlParser: true })
+  .connect(URI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
