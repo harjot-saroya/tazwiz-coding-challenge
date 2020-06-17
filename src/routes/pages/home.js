@@ -116,7 +116,7 @@ function Home() {
     axios.get("http://localhost:3001/logout");
     history.push("/");
   };
-  if (user == "Not Found") {
+  if (user === "Not Found") {
     logout();
   }
   const res = async () => {

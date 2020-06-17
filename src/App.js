@@ -12,7 +12,7 @@ function App() {
   const check = () => {
     axios.get("http://localhost:3001/check").then(
       response => {
-        if (response.data == "Found") {
+        if (response.data === "Found") {
           history.push("/home");
         } else {
           history.push("/");
@@ -82,7 +82,7 @@ function App() {
   };
 
   const submitAcct = () => {
-    if (cpass == pass2) {
+    if (cpass === pass2) {
       axios
         .post("http://localhost:3001/createAccount", {
           cusername,
