@@ -55,11 +55,11 @@ mongoose
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
 
-// app.get("/", async (req, res) => {
-//   if (!req.session.user) {
-//     res.redirect("/logout");
-//   }
-// });
+app.get("/", async (req, res) => {
+  if (!req.session.user) {
+    res.redirect("/logout");
+  }
+});
 
 app.post("/login", async (req, res) => {
   const user = req.body.username;
