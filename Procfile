@@ -1,2 +1,1 @@
-web: npm start
-api: npm install
+web: node server.js
