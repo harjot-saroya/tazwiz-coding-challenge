@@ -2,10 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "engines":{
-  	"node":"10.16.0",
-  	"npm":"6.9.0"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -42,10 +38,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-
-
+    "eject": "react-scripts eject",
+    "install": "node server.js",
+    "heroku-postbuild": "cd client && npm && npm run build"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
